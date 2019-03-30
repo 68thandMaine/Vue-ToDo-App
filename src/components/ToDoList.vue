@@ -1,9 +1,8 @@
 <template>
 <div>
-  <ul>
-  <li v-for='(item, index) in todoList' :key='index'>{{item.task}}</li>
-  <hr />
-  </ul>
+  <div v-for='(toDoItem, index) in todoList' :key='index'>
+    <ToDo :toDoItem='toDoItem' :index='index' :editToDo='handleEditToDo'/>
+  </div>
 </div>
 </template>
 
@@ -25,8 +24,8 @@ export default {
     }
   },
   methods: {
-    handleAddToDo () {
-      alert('add todo was clicked')
+    handleEditToDo () {
+      alert('edit todo was clicked')
     }
   }
 }

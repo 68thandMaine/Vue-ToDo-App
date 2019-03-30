@@ -1,16 +1,17 @@
 <template>
-<li>
-
-    {{todo.item}}
-
-</li>
+<div>
+  <div>
+    <p @click='editToDo'>{{ toDoItem.task }}</p>
+  </div>
+</div>
 </template>
 
 <script>
 export default {
   name: 'ToDo',
   props: [
-    'item'
+    'toDoItem',
+    'editToDo'
   ]
 }
 </script>
