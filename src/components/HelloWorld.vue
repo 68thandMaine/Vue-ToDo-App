@@ -3,7 +3,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <div class="headerWrapper">
-      <button>New To Do Item</button>
+      <button @click='handleNewToDo'>New To Do Item</button>
     </div>
     </div>
     <div>
@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     handleNewToDo () {
-
+      alert('new to do clicked')
     }
   }
 }

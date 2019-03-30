@@ -1,6 +1,6 @@
-# todo
+# Vue To Do List
 
-> A Vue.js project
+> A Vue.js To Do List practice project
 
 ## Build Setup
 

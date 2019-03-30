@@ -1,10 +1,10 @@
 <template>
-  <!-- <div v-for=('todo, index') in todoList :key='index'>
-    <ToDo :todo='todo' :index='index' />
-  </div> -->
-  <div>ToDoList works
-  <ToDo />
-  </div>
+<div>
+  <ul>
+  <li v-for='(item, index) in todoList' :key='index'>{{item.task}}</li>
+  <hr />
+  </ul>
+</div>
 </template>
 
 <script>
@@ -16,7 +16,18 @@ export default {
     ToDo
   },
   data () {
-
+    return {
+      todoList: [
+        {task: 'Learn Vue', importance: 1},
+        {task: 'Study testing frameworks', importance: 2},
+        {task: 'Wash dishes', importance: 3}
+      ]
+    }
+  },
+  methods: {
+    handleAddToDo () {
+      alert('add todo was clicked')
+    }
   }
 }
 </script>

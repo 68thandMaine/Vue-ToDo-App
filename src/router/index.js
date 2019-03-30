@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
-// import ToDo from '@/components/ToDo';
+import ToDoForm from '@/components/ToDoForm'
 
 Vue.use(Router)
 
@@ -12,10 +12,10 @@ export default new Router({
       name: 'HelloWorld',
       component: HelloWorld
     },
-    // {
-    //   path: '/todo',
-    //   name: 'ToDo',
-    //   component: ToDo
-    // },
+    {
+      path: '/todoform',
+      name: 'ToDoForm',
+      component: ToDoForm
+    }
   ]
 })
