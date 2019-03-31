@@ -2,9 +2,6 @@
  <div>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <div class="headerWrapper">
-      <button @click='handleNewToDo'>New To Do Item</button>
-    </div>
     </div>
     <div>
       <ToDoList />
@@ -23,11 +20,6 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js To Do App'
-    }
-  },
-  methods: {
-    handleNewToDo () {
-      alert('new to do clicked')
     }
   }
 }

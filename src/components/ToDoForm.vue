@@ -9,13 +9,14 @@
       <label for='importance'>Importance</label>
       <div>
         <select id='importance' v-model='importance' required>
+          <option />
           <option value= 1>Urgent</option>
           <option value= 2>Somewhat</option>
           <option value= 3>Not at all</option>
         </select>
       </div>
       <div>
-        <button type='submit' @click.prevent='newToDo'>Add to the list!</button>
+        <button  @click.prevent='newToDo'>Add to the list!</button>
       </div>
     </form>
   </div>
@@ -23,5 +24,31 @@
 
 <script>
 export default {
-  props
+  props: ['addNewTask'],
+data() {
+  return {
+    // todoList: this.$route.params.testf
+    task: '',
+    importance: ''
+  }
+},
+methods : {
+  newToDo () {
+    if (task.value === '' || importance.value === '') {
+      return alert('enter task and importance informatoin')
+      } else {
+       let newTask = Object.assign({}, {
+         task: task.value,
+         importance: importance.value,
+         date: new Date()
+       });
+       this.addNewTask(newTask)
+      }
+    }
+  }
 }
+</script>
+
+
+<style>
+</style>
