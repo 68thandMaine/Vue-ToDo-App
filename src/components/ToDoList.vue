@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     handleEditToDo (toDo) {
-      console.log('i was clicked', toDo.id)
+      console.log('To Do item id: ', toDo.complete)
     },
      handleNewToDo () {
       this.newToDo = true;

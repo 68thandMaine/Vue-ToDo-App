@@ -1,17 +1,11 @@
 <template>
 <div>
   <div id="toDoItemWrapper">
-    <div @click="selectTaskToEdit">
-     <p>{{ toDoItem.task }}</p>
+    <ul v-if='toDoItem.complete===false' >
+     <li @click="selectTaskToEdit">{{ toDoItem.task }}<span>Complete: <input type='checkbox' @click='toggleDone'></span> </li>
      <p>{{toDoItem.id}}</p>
+    </ul>
     </div>
-    <div>
-      <label for='complete'>Complete</label>
-      <div>
-        <input type='checkbox' value='toDoItem.complete'>
-      </div>
-    </div>
-  </div>
 </div>
 </template>
 
@@ -26,6 +20,9 @@ export default {
     selectTaskToEdit () {
       let taskToEdit = this.toDoItem
       this.editToDo(taskToEdit)
+    },
+    toggleDone () {
+      this.toDoItem.complete=true;
     }
   }
 }
@@ -36,6 +33,7 @@ export default {
   border: solid 2px red;
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-self: left
 }
+
 </style>
