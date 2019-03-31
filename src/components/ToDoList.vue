@@ -29,15 +29,15 @@ export default {
       newToDo: false,
       toDoList: true,
       todoList: [
-        {task: 'Learn Vue', importance: 1},
-        {task: 'Study testing frameworks', importance: 2},
-        {task: 'Wash dishes', importance: 3}
+        {task: 'Learn Vue', importance: 1, complete: false, id: 1},
+        {task: 'Study testing frameworks', importance: 2, complete: false, id: 2},
+        {task: 'Wash dishes', importance: 3, complete: false, id: 3}
       ]
     }
   },
   methods: {
-    handleEditToDo () {
-      alert('edit todo was clicked')
+    handleEditToDo (toDo) {
+      console.log('i was clicked', toDo.id)
     },
      handleNewToDo () {
       this.newToDo = true;
