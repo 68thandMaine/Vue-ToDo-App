@@ -6,8 +6,10 @@
   <div v-if='newToDo'>
     <ToDoForm :addNewTask='addNewTask'/>
   </div>
-  <div v-for='(toDoItem, index) in todoList' :key='index'>
-    <ToDo :toDoItem='toDoItem' :index='index' :editToDo='handleEditToDo'/>
+  <div v-if='toDoList'>
+    <div v-for='(toDoItem, index) in todoList' :key='index'>
+      <ToDo :toDoItem='toDoItem' :index='index' :editToDo='handleEditToDo'/>
+    </div>
   </div>
 </div>
 </template>
@@ -25,6 +27,7 @@ export default {
   data () {
     return {
       newToDo: false,
+      toDoList: true,
       todoList: [
         {task: 'Learn Vue', importance: 1},
         {task: 'Study testing frameworks', importance: 2},
@@ -38,10 +41,13 @@ export default {
     },
      handleNewToDo () {
       this.newToDo = true;
+      this.toDoList = false;
     },
     addNewTask (task) {
       console.log(task)
       this.todoList.push(task);
+      this.newToDo = false;
+      this.toDoList = true;
     }
   }
 }

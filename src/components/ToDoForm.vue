@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import {uuid} from 'vue-uuid';
 export default {
   props: ['addNewTask'],
 data() {
@@ -40,7 +41,9 @@ methods : {
        let newTask = Object.assign({}, {
          task: task.value,
          importance: importance.value,
-         date: new Date()
+         date: new Date(),
+         complete: false,
+         id: this.$uuid.v4()
        });
        this.addNewTask(newTask)
       }
